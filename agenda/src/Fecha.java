@@ -1,10 +1,10 @@
 public class Fecha {
     int dia;
     int mes;
-    int año;
+    int ano;
 
-    public int getAño() {
-        return año;
+    public int getAno() {
+        return ano;
     }
     public int getDia() {
         return dia;
@@ -12,8 +12,8 @@ public class Fecha {
     public int getMes() {
         return mes;
     }
-    public void setAño(int año) {
-        this.año = año;
+    public void setAno(int ano) {
+        this.ano = ano;
     }
     public void setDia(int dia) {
         this.dia = dia;
