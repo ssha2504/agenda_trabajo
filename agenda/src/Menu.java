@@ -29,10 +29,13 @@ public class Menu {
         if (numeroEntero != 8){
             switch (numeroEntero){
                 case 0:
-                    Contacto contacto = new Contacto("shangfeng","shan",12345679,"avida.juan",29210,"12358435@gmail.com");
+                	
+                	
 
                     break;
                 case 1:
+                	
+                	  Contacto contacto = new Contacto("shangfeng","shan",null, 12345679,"avida.juan",29210,"12358435@gmail.com");
 
                     break;
                 case 2:
