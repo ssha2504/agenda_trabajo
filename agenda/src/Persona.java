@@ -1,14 +1,15 @@
 public class Persona {
-    String nombre;
-    String apellido;
-    String fNacimiento;
+    private String nombre;
+    private String apellido;
+    private Fecha fNacimiento;
    
     
 
-    public Persona(String nombre, String apellidos, String fNacimiento) {
+    public Persona(String nombre, String apellidos, Fecha fNacimiento) {
         this.nombre = nombre;
         this.apellido = apellidos;
         this.fNacimiento = fNacimiento;
+        
     }
 
 
@@ -24,10 +25,10 @@ public class Persona {
 	}
 
 
-	public String getfNacimiento() {
-		return fNacimiento;
+   public Fecha getFNacimiento() {
+	        
+	   return fNacimiento;
 	}
-
 
 
 	@Override
