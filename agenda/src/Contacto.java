@@ -42,7 +42,7 @@ public class Contacto extends Persona{
     }
 
     // Constructor que acepta nombre, apellidos y teléfono
-    public Contacto(String nombre, String apellidos, int telefono , String direccion, int direccionPos, String email) {
+    public Contacto(String nombre, String apellidos, FNacimiento fNacimiento ,int telefono , String direccion, int direccionPos, String email) {
         // Llama al constructor de la clase base (Persona) para establecer el nombre y los apellidos
         super(nombre, apellidos);
         // Establece el teléfono

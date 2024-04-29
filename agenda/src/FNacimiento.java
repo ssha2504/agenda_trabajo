@@ -1,4 +1,4 @@
-public class Fecha {
+public class FNacimiento {
     int dia;
     int mes;
     int ano;
@@ -12,14 +12,11 @@ public class Fecha {
     public int getMes() {
         return mes;
     }
-    public void setAno(int ano) {
+    public void Ano(int ano) {
         this.ano = ano;
-    }
-    public void setDia(int dia) {
+        this.mes = mes;
         this.dia = dia;
     }
-    public void setMes(int mes) {
-        this.mes = mes;
-    }
+
 
 }
