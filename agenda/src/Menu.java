@@ -1,11 +1,9 @@
 import java.util.Scanner;
 import java.lang.System;
 
-import static java.sql.DriverManager.println;
-
 public class Menu {
 
-    public void menus() {
+    public int menus() {
         Scanner scanner = new Scanner(System.in);
         /* -------- */
         /* AGENDA ++ */
@@ -24,47 +22,11 @@ public class Menu {
                 8. Salir
                 --
                 Opcion : \s""");
-        int numeroEntero = scanner.nextInt();
+        int opcion = scanner.nextInt();
+        scanner.nextLine(); //limpiar el buffer del Scanner
+        return opcion;
 
-        if (numeroEntero != 8){
-            switch (numeroEntero){
-                case 0:
-                    Contacto contacto = new Contacto("shangfeng","shan",12345679,"avida.juan",29210,"12358435@gmail.com");
-
-                    break;
-                case 1:
-
-                    break;
-                case 2:
-
-                    break;
-                case 3:
-
-                    break;
-
-                case 4:
-
-                    break;
-
-                case 5:
-
-                    break;
-
-                case 6:
-
-                    break;
-
-                case 7:
-
-                    break;
-                case 8:
-                    println("Saliendo ... " +
-                            "bye");
-                    break;
-
-
-            }
-        }
     }
-
 }
+
+
