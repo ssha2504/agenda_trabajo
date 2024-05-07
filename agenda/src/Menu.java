@@ -4,14 +4,16 @@ import java.lang.System;
 import static java.sql.DriverManager.println;
 
 public class Menu {
-
-    public void menus() {
-        Scanner scanner = new Scanner(System.in);
-        /* -------- */
-        /* AGENDA ++ */
-        /* -------- */
-
-        System.out.println("""
+	
+	private int opcion;
+	
+	public Menu(int opcion) {
+		opcion =-1;
+	
+	}
+	
+	public void mostrarMenu() {
+		System.out.println("""
                 = OPCIONES =
                 0. Configuración cifrado
                 1. Nuevo contacto
@@ -22,16 +24,29 @@ public class Menu {
                 6. Generar listar en pantalla
                 7. Generar listado en fichero
                 8. Salir
-                --
-                Opcion : \s""");
+               
+                """);
+		
+	}
+	
+	public int elegirOpcion() {
+		Scanner sc = new Scanner(System.in);
+		//try..catch tratamiento de excepciones o un bucle hasta que introduzca opcion correcta
+		//u otro metodo que sea comprobar opcion
+		this.opcion = sc.nextInt();
+		
+		
+		
+	}
+
+    public void menus() {
+    	
         int numeroEntero = scanner.nextInt();
 
         if (numeroEntero != 8){
             switch (numeroEntero){
                 case 0:
                 	
-                	
-
                     break;
                 case 1:
                 	

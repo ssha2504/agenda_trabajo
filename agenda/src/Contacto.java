@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Contacto extends Persona{
     private int telefono;
     private String direccion;
@@ -40,7 +42,24 @@ public class Contacto extends Persona{
         return telefono;
     }
 
+    
+    
+    
+    public void pedirDatos() {
+    
+    	
+    	Scanner scanner = new Scanner(System.in);
+    	
+    	System.out.println("Introduzca un nombre:");
+    	String nombre = scanner.nextLine();
+    	
+    	
+    	
+    }
 
+    
+    
+    
     @Override
     public String toString() {
         return "Contacto{" +
