@@ -1,25 +1,35 @@
 public class Contacto extends Persona{
     private int telefono;
-    private int direccionPos;
     private String direccion;
     private String email;
 
+    
+   
+    // Constructor que acepta nombre, apellidos y teléfono
+    public Contacto(String nombre, String apellido, int telefono, String direccion, String email) {
+        // Llama al constructor de la clase base (Persona) para establecer el nombre y los apellidos
+        super(nombre, apellido);
+        this.telefono = telefono;
+        this.direccion = direccion;
+        this.email = email;
+
+    }
+
+ 
     @Override
     public String getApellido() {
+    	
         return super.getApellido();
     }
 
     @Override
     public String getNombre() {
+    	
         return super.getNombre();
     }
 
     public String getDireccion() {
         return direccion;
-    }
-
-    public int getDireccionPos() {
-        return direccionPos;
     }
 
     public String getEmail() {
@@ -34,23 +44,13 @@ public class Contacto extends Persona{
     @Override
     public String toString() {
         return "Contacto{" +
+        		super.getNombre() + super.getApellido() +
                 "telefono='" + telefono + '\'' +
-                ", direccionPos='" + direccionPos + '\'' +
+                ", direccionPos='" + '\'' +
                 ", direccion='" + direccion + '\'' +
                 ", email='" + email + '\'' +
                 '}';
     }
 
-    // Constructor que acepta nombre, apellidos y teléfono
-    public Contacto(String nombre, String apellidos, Fecha fNacimiento, int telefono , String direccion, int direccionPos, String email) {
-        // Llama al constructor de la clase base (Persona) para establecer el nombre y los apellidos
-        super(nombre, apellidos, fNacimiento);
-        // Establece el teléfono
-        this.telefono = telefono;
-        this.direccionPos = direccionPos;
-        this.direccion = direccion;
-        this.email = email;
-
-    }
-
+   
 }
