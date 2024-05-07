@@ -7,9 +7,8 @@ public class Contacto extends Persona{
 
     
    
-    // Constructor que acepta nombre, apellidos y teléfono
+    
     public Contacto(String nombre, String apellido, int telefono, String direccion, String email) {
-        // Llama al constructor de la clase base (Persona) para establecer el nombre y los apellidos
         super(nombre, apellido);
         this.telefono = telefono;
         this.direccion = direccion;
@@ -42,24 +41,28 @@ public class Contacto extends Persona{
         return telefono;
     }
 
-    
-    
-    
+   
     public void pedirDatos() {
     
-    	
     	Scanner scanner = new Scanner(System.in);
     	
     	System.out.println("Introduzca un nombre:");
     	String nombre = scanner.nextLine();
     	
+    	System.out.println("Introduzca un nombre:");
+    	String apellido = scanner.nextLine();
     	
+    	System.out.println("Introduzca un telefono:");
+    	int telefono = scanner.nextInt();
+    	
+    	System.out.println("Introduzca un telefono:");
+    	String direccion = scanner.nextLine();
+    	
+    	System.out.println("Introduzca un telefono:");
+    	String email = scanner.nextLine();
     	
     }
 
-    
-    
-    
     @Override
     public String toString() {
         return "Contacto{" +

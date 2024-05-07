@@ -7,8 +7,9 @@ public class Menu {
 	
 	private int opcion;
 	
-	public Menu(int opcion) {
-		opcion =-1;
+	public Menu() {
+		
+		this.opcion = -1;
 	
 	}
 	
@@ -31,58 +32,69 @@ public class Menu {
 	
 	public int elegirOpcion() {
 		Scanner sc = new Scanner(System.in);
-		//try..catch tratamiento de excepciones o un bucle hasta que introduzca opcion correcta
-		//u otro metodo que sea comprobar opcion
+		
+		System.out.println("Introduce una opción XD:");
 		this.opcion = sc.nextInt();
-		
-		
+		return this.opcion;
 		
 	}
 
-    public void menus() {
+    public void opcionMenu() {
     	
-        int numeroEntero = scanner.nextInt();
+    	 Scanner sc = new Scanner(System.in);
+    	 mostrarMenu();
+    
+    	 int numeroEntero = elegirOpcion();
+    	   switch (numeroEntero) {
+           case 0:
+        	   
+               break;
+               
+      
+           case 1:
+        	   
+        	   break;
+        	   
+           case 2:
+        	   
+        	   break;
+        	   
+        	   
+           case 3:
+        	   
+        	   break;
+        	   
+           case 4:
+        	   
+        	   break;
+        	   
+        	   
+           case 5:
+        	   
+        	   break;
 
-        if (numeroEntero != 8){
-            switch (numeroEntero){
-                case 0:
-                	
-                    break;
-                case 1:
-                	
-                	  Contacto contacto = new Contacto("shangfeng","shan",null, 12345679,"avida.juan",29210,"12358435@gmail.com");
+        	   
+           case 6:
+        	   
+        	   break; 
+            
+        	   
+           case 7:
+        	   
+        	   break;
+        	   
+        	   
+           case 8:
+               System.out.println("Saliendo... bye");
+               break;
+               
+           default:
+               System.out.println("Opción no válida. Selecciona otra.");
 
-                    break;
-                case 2:
-
-                    break;
-                case 3:
-
-                    break;
-
-                case 4:
-
-                    break;
-
-                case 5:
-
-                    break;
-
-                case 6:
-
-                    break;
-
-                case 7:
-
-                    break;
-                case 8:
-                    println("Saliendo ... " +
-                            "bye");
-                    break;
-
-
-            }
+    	   }
+    	 
         }
+        
     }
 
-}
+
