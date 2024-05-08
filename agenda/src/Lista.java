@@ -44,7 +44,7 @@ public class Lista {
         }
     }
 
-    // Clase interna para representar los nodos de la lista
+    //clase interna para representar los nodos de la lista
     private class Nodo {
         private Contacto contacto;
         private Nodo siguiente;
