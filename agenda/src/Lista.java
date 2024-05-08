@@ -1,6 +1,7 @@
 public class Lista {
     private Nodo inicio;
     private int size;
+    private String datos[];
 
     public Lista() {
         inicio = null;
@@ -25,7 +26,7 @@ public class Lista {
     }
 
     // Método para obtener el tamaño de la lista
-    public int tamaño() {
+    public int Tamano() {
         return size;
     }
 
@@ -45,7 +46,7 @@ public class Lista {
     }
 
     //clase interna para representar los nodos de la lista
-    private class Nodo {
+    private static class Nodo {
         private Contacto contacto;
         private Nodo siguiente;
 

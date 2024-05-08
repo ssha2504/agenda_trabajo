@@ -2,35 +2,35 @@
 
 public class Persona {
 
-    private String Nombre;
-    private String Apellido;
+    private String nombre;
+    private String apellido;
     private int fNacimiento;
 
     public Persona(String nombre, String apellidos) {
-        this.Nombre = nombre;
-        this.Apellido = apellidos;
+        this.nombre = nombre;
+        this.apellido = apellidos;
     }
 
 
-    public Persona(String Nombre, String Apellidos, int fNacimiento) {
-        this.Nombre = Nombre;
-        this.Apellido = Apellidos;
+    public Persona(String nombre, String apellidos, int fNacimiento) {
+        this.nombre = nombre;
+        this.apellido = apellidos;
         this.fNacimiento = fNacimiento;
     }
 
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
     public String getApellido() {
-        return Apellido;
+        return apellido;
     }
 
 	@Override
     public String toString() {
         return "Persona{" +
-                "Nombre='" + Nombre + '\'' +
-                ", Apellido='" + Apellido + '\'' +
+                "Nombre='" + nombre + '\'' +
+                ", Apellido='" + apellido + '\'' +
                 '}';
     }
 

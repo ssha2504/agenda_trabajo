@@ -2,11 +2,11 @@ import java.util.Scanner;
 
 
 public class Agenda {
-    private Lista listaContactos; // Suponiendo que tienes una lista de contactos en tu clase Agenda
+    private static Lista listaContactos; // Suponiendo que tienes una lista de contactos en tu clase Agenda
 
     // Constructor, métodos y atributos adicionales
 
-    public void nuevoContacto() {
+    public static void NuevoContacto() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Ingrese el nombre del nuevo contacto:");

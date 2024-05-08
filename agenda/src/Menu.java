@@ -3,12 +3,16 @@ import java.lang.System;
 
 public class Menu {
 
-    public int menus() {
-        Scanner scanner = new Scanner(System.in);
-        /* -------- */
-        /* AGENDA ++ */
-        /* -------- */
+    //datos
+    private int opcion;
+    Agenda agenda = new Agenda();
+    public Menu() {
 
+        this.opcion = -1;
+
+    }
+
+    public void mostrarMenu() {
         System.out.println("""
                 = OPCIONES =
                 0. Configuración cifrado
@@ -20,12 +24,73 @@ public class Menu {
                 6. Generar listar en pantalla
                 7. Generar listado en fichero
                 8. Salir
-                --
-                Opcion : \s""");
-        int opcion = scanner.nextInt();
-        scanner.nextLine(); //limpiar el buffer del Scanner
-        return opcion;
+               
+                """);
 
+    }
+
+    public int elegirOpcion() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Introduce una opción XD:");
+        this.opcion = sc.nextInt();
+        return this.opcion;
+
+    }
+
+    public void opcionMenu() {
+
+        Scanner sc = new Scanner(System.in);
+        mostrarMenu();
+
+        int numeroEntero = elegirOpcion();
+        switch (numeroEntero) {
+            case 0:
+
+                break;
+
+
+            case 1:
+                Agenda.NuevoContacto();
+                break;
+
+            case 2:
+
+                break;
+
+
+            case 3:
+
+                break;
+
+            case 4:
+
+                break;
+
+
+            case 5:
+
+                break;
+
+
+            case 6:
+
+                break;
+
+
+            case 7:
+
+                break;
+
+
+            case 8:
+                System.out.println("Saliendo... bye");
+                break;
+
+            default:
+                System.out.println("Opción no válida. Selecciona otra.");
+
+        }
 
     }
 }
