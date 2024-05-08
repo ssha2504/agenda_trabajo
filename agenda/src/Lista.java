@@ -1,8 +1,10 @@
 public class Lista {
+    //datos
     private Nodo inicio;
     private int size;
     private String datos[];
 
+    //inicializar Losta
     public Lista() {
         inicio = null;
         size = 0;
@@ -10,7 +12,7 @@ public class Lista {
 
 
 
-    // Método para agregar un contacto al final de la lista
+    //metodo para agregar un contacto al final de la lista
     public void agregar(Contacto contacto) {
         Nodo nuevoNodo = new Nodo(contacto);
         if (inicio == null) {
@@ -25,12 +27,12 @@ public class Lista {
         size++;
     }
 
-    // Método para obtener el tamaño de la lista
+    //metodo para obtener el tamaño de la lista
     public int Tamano() {
         return size;
     }
 
-    // Método para mostrar todos los contactos en la lista
+    //metodo para mostrar todos los contactos en la lista
     public void mostrarContactos() {
         if (inicio == null) {
             System.out.println("La lista está vacía.");

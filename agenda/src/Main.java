@@ -1,12 +1,14 @@
 import java.util.Scanner;
 
 /**
- * Autores del Proyecto: Shang y Ángel
+ * @author: Shang y Ángel
+ *
  */
 
 public class Main {
     public static void main(String[] args) {
         Menu menu = new Menu();
+        //llamo a opciones de menu
         menu.opcionMenu();
     }
 

@@ -2,10 +2,9 @@ import java.util.Scanner;
 
 
 public class Agenda {
-    private static Lista listaContactos; // Suponiendo que tienes una lista de contactos en tu clase Agenda
+    private static Lista listaContactos;
 
-    // Constructor, métodos y atributos adicionales
-
+    //pide los datos de nuevo contacto
     public static void NuevoContacto() {
         Scanner scanner = new Scanner(System.in);
 
@@ -24,12 +23,10 @@ public class Agenda {
         System.out.println("Ingrese el direcion postal:");
         int direcPos = scanner.nextInt();
 
-        // Puedes pedir más información aquí, como dirección postal, etc.
-
-        // Crear un nuevo contacto con los datos ingresados
+        //crear un nuevo contacto con los datos ingresados
         Contacto nuevoContacto = new Contacto(nombre, apellidos, telefono, email,direcPos);
 
-        // Agregar el nuevo contacto a la lista de contactos
+        //agregar el nuevo contacto a la lista de contactos
         listaContactos.agregar(nuevoContacto);
 
         System.out.println("¡Contacto agregado correctamente!");

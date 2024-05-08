@@ -6,12 +6,13 @@ public class Menu {
     //datos
     private int opcion;
     Agenda agenda = new Agenda();
+    //el menu inicialmente va en -1 donde no da nada de error
     public Menu() {
-
         this.opcion = -1;
 
     }
 
+    //los textos de obciones de menu
     public void mostrarMenu() {
         System.out.println("""
                 = OPCIONES =
@@ -29,6 +30,7 @@ public class Menu {
 
     }
 
+    //pide el obciones
     public int elegirOpcion() {
         Scanner sc = new Scanner(System.in);
 
@@ -38,6 +40,7 @@ public class Menu {
 
     }
 
+    //segun realiza funciones segun los opciones introducido
     public void opcionMenu() {
 
         Scanner sc = new Scanner(System.in);

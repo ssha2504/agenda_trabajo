@@ -1,18 +1,18 @@
 public class Contacto extends Persona{
+    //datos
     private String telefono;
     private int direcPos;
     private String email;
 
+    //el funcion de clase de contacto
     public Contacto(String nombre, String apellidos, String telefono, String email, int direcPos) {
         super(nombre, apellidos);
         this.telefono = telefono;
         this.email = email;
         this.direcPos = direcPos;
-
-
     }
 
-
+//los getter y setter
     @Override
     public String getApellido() {
         return super.getApellido();
@@ -45,11 +45,9 @@ public class Contacto extends Persona{
                 '}';
     }
 
-    // Constructor que acepta nombre, apellidos y teléfono
+    //constructor que acepta nombre, apellidos y teléfono
     public Contacto(String nombre, String apellidos ,String telefono , String direccion, int direccionPos, String email) {
-        // Llama al constructor de la clase base (Persona) para establecer el nombre y los apellidos
         super(nombre, apellidos);
-        // Establece el teléfono
         this.telefono = telefono;
         this.direcPos = direccionPos;
         this.email = email;
