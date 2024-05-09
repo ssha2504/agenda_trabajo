@@ -49,29 +49,28 @@ public class Lista {
     }
 
     //funcion para hacer busqueda de contactos seguin telefono menor plovable de repitir
+
     public static Contacto buscarContacto(String telefonoBuscado) {
         Scanner sc = new Scanner(System.in);
         Nodo temp = inicio;
         int indice = 1;
-        
+
         System.out.println("Introduce el telefono de contacto que busca: ");
         String telefono = sc.nextLine();
-        
-        
+
+
         while (temp != null) {
             if (temp.getContacto().getTelefono().equals(telefonoBuscado)) {
-                
-            	return temp.getContacto();
+
+                return temp.getContacto();
             }
-            
+
             temp = temp.getSiguiente();
         }
         System.out.println("No existe el contacto con el telefono " + telefonoBuscado);
         return null;
     }
-    
-    
-    
+
     //clase interna para representar los nodos de la lista
     private static class Nodo {
         private Contacto contacto;

@@ -56,6 +56,7 @@ public class Menu {
                     break;
 
                 case 2:
+
                 	
                 	  System.out.println("Introduce el nombre del contacto que busca: ");
                       String nombreBuscado = sc.nextLine();
@@ -65,6 +66,7 @@ public class Menu {
                       } else {
                           System.out.println("No se encontró el contacto.");
                       }
+
 
                     break;
 
@@ -85,8 +87,6 @@ public class Menu {
 
                 case 6:
 
-                	
-                	Lista.mostrarContactos();
                     break;
 
 
