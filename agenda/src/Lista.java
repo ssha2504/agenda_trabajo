@@ -49,7 +49,7 @@ public class Lista {
     }
 
     //funcion para hacer busqueda de contactos seguin telefono menor plovable de repitir
-    public static Contacto buscarContacto(Contacto contacto) {
+    public static Contacto buscarContacto() {
         Scanner sc = new Scanner(System.in);
         Nodo temp = inicio;
         int indice = 1;
@@ -57,7 +57,8 @@ public class Lista {
         String telefono = sc.nextLine();
         while (temp != null) {
 
-            if (temp.getContacto().equals(contacto)) {
+            if (temp.getContacto().equals(telefono)) {
+                System.out.println(temp.getContacto());
                 return temp.getContacto();
             }
             temp = temp.getSiguiente();

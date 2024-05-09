@@ -56,7 +56,7 @@ public class Menu {
                     break;
 
                 case 2:
-
+                    Lista.buscarContacto();
                     break;
 
 
