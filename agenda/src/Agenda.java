@@ -7,10 +7,8 @@ public class Agenda {
     //pide los datos de nuevo contacto
     public static void NuevoContacto() {
         Scanner scanner = new Scanner(System.in);
-
         System.out.println("Ingrese el nombre del nuevo contacto:");
         String nombre = scanner.nextLine();
-
         System.out.println("Ingrese los apellidos:");
         String apellidos = scanner.nextLine();
 
@@ -27,7 +25,7 @@ public class Agenda {
         Contacto nuevoContacto = new Contacto(nombre, apellidos, telefono, email,direcPos);
 
         //agregar el nuevo contacto a la lista de contactos
-        listaContactos.agregar(nuevoContacto);
+        Lista.agregar(nuevoContacto);
 
         System.out.println("¡Contacto agregado correctamente!");
     }

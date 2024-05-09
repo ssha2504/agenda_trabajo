@@ -1,19 +1,20 @@
+import java.util.Scanner;
+import java.lang.System;
+
 public class Lista {
     //datos
-    private Nodo inicio;
-    private int size;
+    private static Nodo inicio;
+    private static int size;
     private String datos[];
 
-    //inicializar Losta
+    //inicializar Lista
     public Lista() {
         inicio = null;
         size = 0;
     }
 
-
-
     //metodo para agregar un contacto al final de la lista
-    public void agregar(Contacto contacto) {
+    public static void agregar(Contacto contacto) {
         Nodo nuevoNodo = new Nodo(contacto);
         if (inicio == null) {
             inicio = nuevoNodo;
@@ -33,7 +34,7 @@ public class Lista {
     }
 
     //metodo para mostrar todos los contactos en la lista
-    public void mostrarContactos() {
+    public static void mostrarContactos() {
         if (inicio == null) {
             System.out.println("La lista está vacía.");
         } else {
@@ -45,6 +46,24 @@ public class Lista {
                 indice++;
             }
         }
+    }
+
+    //funcion para hacer busqueda de contactos seguin telefono menor plovable de repitir
+    public static Contacto buscarContacto(Contacto contacto) {
+        Scanner sc = new Scanner(System.in);
+        Nodo temp = inicio;
+        int indice = 1;
+        System.out.println("Introduce el telefono de contacto que busca: ");
+        String telefono = sc.nextLine();
+        while (temp != null) {
+
+            if (temp.getContacto().equals(contacto)) {
+                return temp.getContacto();
+            }
+            temp = temp.getSiguiente();
+        }
+        System.out.println("No existe el contacto que busca");
+        return null;
     }
 
     //clase interna para representar los nodos de la lista
@@ -69,8 +88,6 @@ public class Lista {
             this.siguiente = siguiente;
         }
     }
-
-
 
 }
 

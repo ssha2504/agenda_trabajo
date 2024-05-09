@@ -27,7 +27,6 @@ public class Menu {
                 8. Salir
                
                 """);
-
     }
 
     //pide el obciones
@@ -42,59 +41,62 @@ public class Menu {
 
     //segun realiza funciones segun los opciones introducido
     public void opcionMenu() {
+        while (this.opcion != 8) {
+            Scanner sc = new Scanner(System.in);
+            mostrarMenu();
 
-        Scanner sc = new Scanner(System.in);
-        mostrarMenu();
+            int numeroEntero = elegirOpcion();
+            switch (numeroEntero) {
+                case 0:
 
-        int numeroEntero = elegirOpcion();
-        switch (numeroEntero) {
-            case 0:
+                    break;
 
-                break;
+                case 1:
+                    Agenda.NuevoContacto();
+                    break;
 
+                case 2:
 
-            case 1:
-                Agenda.NuevoContacto();
-                break;
-
-            case 2:
-
-                break;
-
-
-            case 3:
-
-                break;
-
-            case 4:
-
-                break;
+                    break;
 
 
-            case 5:
+                case 3:
 
-                break;
+                    break;
 
+                case 4:
 
-            case 6:
-
-                break;
-
-
-            case 7:
-
-                break;
+                    break;
 
 
-            case 8:
-                System.out.println("Saliendo... bye");
-                break;
+                case 5:
 
-            default:
-                System.out.println("Opción no válida. Selecciona otra.");
+                    break;
 
+
+                case 6:
+
+                    break;
+
+
+                case 7:
+
+                    break;
+
+
+                case 8:
+                    System.out.println("Saliendo... bye");
+                    break;
+
+                case 9:
+                        Lista.mostrarContactos();
+                    break;
+                default:
+                    System.out.println("Opción no válida. Selecciona otra.");
+
+
+            }
         }
-
     }
 }
 
