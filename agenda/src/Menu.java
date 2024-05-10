@@ -53,6 +53,23 @@ public class Menu {
       
            case 1:
         	   
+        	Scanner scanner = new Scanner(System.in);
+           	
+           	System.out.println("Introduzca un nombre:");
+           	String nombre = scanner.nextLine();
+           	
+           	System.out.println("Introduzca un nombre:");
+           	String apellido = scanner.nextLine();
+           	
+           	System.out.println("Introduzca un telefono:");
+           	int telefono = scanner.nextInt();
+           	
+           	System.out.println("Introduzca un telefono:");
+           	String direccion = scanner.nextLine();
+           	
+           	System.out.println("Introduzca un telefono:");
+           	String email = scanner.nextLine();
+           	
         	   
         	   
         	   break;
