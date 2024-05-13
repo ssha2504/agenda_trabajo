@@ -89,7 +89,7 @@ public class Menu {
 
 
                 case 6:
-
+                    Lista.mostrarContactos();
                     break;
 
 
@@ -102,9 +102,6 @@ public class Menu {
                     System.out.println("Saliendo... bye");
                     break;
 
-                case 9:
-                        Lista.mostrarContactos();
-                    break;
                 default:
                     System.out.println("Opción no válida. Selecciona otra.");
 

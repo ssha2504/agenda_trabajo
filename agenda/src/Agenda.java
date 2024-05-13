@@ -17,7 +17,6 @@ public class Agenda {
 
         System.out.println("Ingrese el correo electrónico:");
         String email = scanner.nextLine();
-
         System.out.println("Ingrese el direcion postal:");
         int direcPos = scanner.nextInt();
 
@@ -29,4 +28,6 @@ public class Agenda {
 
         System.out.println("¡Contacto agregado correctamente!");
     }
+
+    
     }
