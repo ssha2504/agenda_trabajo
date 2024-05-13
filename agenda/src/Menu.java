@@ -5,7 +5,7 @@ public class Menu {
 
     //datos
     private int opcion;
-    Agenda agenda = new Agenda();
+    Lista lista = new Lista();
     //el menu inicialmente va en -1 donde no da nada de error
     public Menu() {
         this.opcion = -1;
@@ -52,7 +52,7 @@ public class Menu {
                     break;
 
                 case 1:
-                    Agenda.NuevoContacto();
+                    Lista.agregar(null);
                     break;
 
                 case 2:
@@ -60,10 +60,15 @@ public class Menu {
                 	
                 	  System.out.println("Introduce el nombre del contacto que busca: ");
                       String nombreBuscado = sc.nextLine();
+                      
                       Contacto contactoBuscado = Lista.buscarContacto(nombreBuscado);
                       if (contactoBuscado!= null) {
+                    	  
                           System.out.println("Contacto encontrado: " + contactoBuscado.getNombre());
-                      } else {
+                          
+                      } 
+                      else {
+                    	  
                           System.out.println("No se encontró el contacto.");
                       }
 
