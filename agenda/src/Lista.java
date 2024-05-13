@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import java.lang.System;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Lista {
     //datos
@@ -50,25 +52,41 @@ public class Lista {
 
     //funcion para hacer busqueda de contactos seguin telefono menor plovable de repitir
 
-    public static Contacto buscarContacto(String telefonoBuscado) {
-        Scanner sc = new Scanner(System.in);
+    public static List<Contacto> buscarContacto(String numeroBuscado) {
+    	List<Contacto> contactosEncontrados = new ArrayList<>();
         Nodo temp = inicio;
-        int indice = 1;
-
-        System.out.println("Introduce el telefono de contacto que busca: ");
-        String telefono = sc.nextLine();
-
-
-        while (temp != null) {
-            if (temp.getContacto().getTelefono().equals(telefonoBuscado)) {
-
-                return temp.getContacto();
+       
+        
+       
+        while (temp!= null) {
+        	
+            if (temp.getContacto().getTelefono().equalsIgnoreCase(numeroBuscado)) {
+                contactosEncontrados.add(temp.getContacto());
             }
-
+            
             temp = temp.getSiguiente();
         }
-        System.out.println("No existe el contacto con el telefono " + telefonoBuscado);
-        return null;
+        
+        if (!contactosEncontrados.isEmpty()) {
+        	
+            System.out.println("Se han encontrado estos " + contactosEncontrados.size() + " contactos:");
+            
+            for (Contacto contacto : contactosEncontrados) {
+               
+            	System.out.println(contacto.toString());
+                         
+            }
+        } 
+        else {
+            System.out.println("No se encontró ningún contacto.");
+        }
+        
+        return contactosEncontrados;
+        
+    	
+    	
+    	
+    	
     }
 
     //clase interna para representar los nodos de la lista

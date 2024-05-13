@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Scanner;
 import java.lang.System;
 
@@ -54,22 +55,11 @@ public class Menu {
                     break;
 
                 case 2:
-
                 	
-                	  System.out.println("Introduce el nombre del contacto que busca: ");
-                      String nombreBuscado = sc.nextLine();
-                      
-                      Contacto contactoBuscado = Lista.buscarContacto(nombreBuscado);
-                      if (contactoBuscado!= null) {
-                    	  
-                          System.out.println("Contacto encontrado: " + contactoBuscado.getNombre());
-                          
-                      } 
-                      else {
-                    	  
-                          System.out.println("No se encontró el contacto.");
-                      }
-
+                	System.out.println("Introduce el numero de telefono para la busqueda: ");
+                    String numeroBuscado = sc.nextLine();
+                    
+                    List<Contacto> contactosEncontrados = Lista.buscarContacto(numeroBuscado);
 
                     break;
 
