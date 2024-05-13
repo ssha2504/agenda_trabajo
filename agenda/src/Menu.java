@@ -5,11 +5,9 @@ public class Menu {
 
     //datos
     private int opcion;
-    Lista lista = new Lista();
     //el menu inicialmente va en -1 donde no da nada de error
     public Menu() {
         this.opcion = -1;
-
     }
 
     //los textos de obciones de menu
@@ -52,7 +50,7 @@ public class Menu {
                     break;
 
                 case 1:
-                    Lista.agregar(null);
+                    Agenda.NuevoContacto();
                     break;
 
                 case 2:
