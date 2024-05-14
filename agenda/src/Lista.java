@@ -31,7 +31,7 @@ public class Lista {
     }
 
     //metodo para obtener el tamaño de la lista
-    public int Tamano() {
+    public int tamano() {
         return size;
     }
 
