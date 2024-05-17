@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.io.IOException;
 import java.io.FileWriter;
-
+import java.time.format.DateTimeFormatter;
 public class Agenda {
     private Lista lista;
     private List<Contacto> contactos;
@@ -13,7 +13,14 @@ public class Agenda {
         this.lista = new Lista();
         this.cifrado = new Cifrado(""); // Inicialización con clave vacía por defecto
     }
-    public void NuevoContacto() {
+
+    public void anaContacto() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate fechaNacimiento = LocalDate.parse("2002-01-01", formatter);
+        Contacto contactos = new Contacto("shan", "a", "1211423", "email", 12135, fechaNacimiento);
+    }
+
+    public void nuevoContacto() {
 
         try {
             Scanner scanner = new Scanner(System.in);
@@ -28,63 +35,74 @@ public class Agenda {
             System.out.println("Ingrese la dirección postal:");
             int direcPos = scanner.nextInt();
             System.out.println("Ingrese la fecha de nacimiento (yyyy-MM-dd):");
+            scanner.nextLine();//limpiar el bafer
             LocalDate fechanc= LocalDate.parse(scanner.nextLine());
 
-            Contacto nuevoContacto = new Contacto(nombre, apellidos, telefono, email, direcPos, fechanc);
-            lista.agregar(nuevoContacto);
+            Contacto contactos = new Contacto(nombre, apellidos, telefono, email, direcPos, fechanc);
+            lista.agregar(contactos);
             System.out.println("¡Contacto agregado correctamente!");
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
 
     }
-    public void ModificarContacto(){
+
+
+    public void modificarContacto() {
         Scanner scanner = new Scanner(System.in);
-        Contacto contacto = buscarContacto();
-        System.out.println("1.Nombre: " +
-                "           2.Apellido: " +
-                "           3.telefono: " +
-                "           4.email: " +
-                "           5.direcion postal: " +
-                "           6.Fecha de nacimiento: ");
-        System.out.println("Introduce el casa que quiere modificar: en numero");
+        Contacto contacto = this.buscarContacto();
+        if (contacto == null) {
+            System.out.println("Contacto no encontrado.");
+            return;
+        }
+        System.out.println("Seleccione el campo a modificar:");
+        System.out.println("1. Nombre");
+        System.out.println("2. Apellido");
+        System.out.println("3. Teléfono");
+        System.out.println("4. Correo electrónico");
+        System.out.println("5. Dirección postal");
+        System.out.println("6. Fecha de nacimiento");
+        System.out.println("Introduce el número del campo que quiere modificar:");
         int cambio = scanner.nextInt();
-        switch (cambio){
+        scanner.nextLine(); // Consumir la línea restante
+
+        switch (cambio) {
             case 1:
-                System.out.println("Ingrese el nombre del nuevo contacto:");
+                System.out.println("Ingrese el nuevo nombre:");
                 String nombre = scanner.nextLine();
                 contacto.setNombre(nombre);
                 break;
             case 2:
-                System.out.println("Ingrese los apellidos:");
+                System.out.println("Ingrese los nuevos apellidos:");
                 String apellidos = scanner.nextLine();
                 contacto.setApellido(apellidos);
                 break;
             case 3:
-                System.out.println("Ingrese el telefono:");
+                System.out.println("Ingrese el nuevo teléfono:");
                 String telefono = scanner.nextLine();
                 contacto.setTelefono(telefono);
                 break;
             case 4:
-                System.out.println("Ingrese el correo electronico:");
+                System.out.println("Ingrese el nuevo correo electrónico:");
                 String email = scanner.nextLine();
                 contacto.setEmail(email);
                 break;
             case 5:
-                System.out.println("Ingrese el direcion postal:");
-                int direcPos = scanner.nextInt();
-                contacto.setdirecPos(direcPos);
+                System.out.println("Ingrese la nueva dirección postal:");
+                int direccionPostal = scanner.nextInt();
+                contacto.setdirecPos(direccionPostal);
                 break;
             case 6:
-                System.out.println("Ingrese la fecha de nacimiento (yyyy-MM-dd):");
-                LocalDate fechanc= LocalDate.parse(scanner.nextLine());
-                contacto.setfNacimiento(fechanc);
+                System.out.println("Ingrese la nueva fecha de nacimiento (yyyy-MM-dd):");
+                LocalDate fechaNacimiento = LocalDate.parse(scanner.nextLine());
+                contacto.setfNacimiento(fechaNacimiento);
                 break;
             default:
                 System.out.println("Opción no válida.");
         }
         System.out.println("Contacto modificado correctamente.");
     }
+
 
     public void consultarContacto() {
         Contacto contacto = buscarContacto();
@@ -112,22 +130,13 @@ public class Agenda {
     }
 
     public int obtenerNumeroContacto() {
-        int cont = 0;
-        for (Contacto contacto : contactos){
-            cont ++;
-        }
-        return cont;
+        return lista.obtenerNumeroContacto();
     }
 
-    public void mostrarContactos(){
-        for (Contacto contacto : contactos){
-            if (contacto != null){
-                System.out.println(contacto);
-            }else {
-                System.out.println("No hay ningun contacto en la lista.");
-            }
-        }
+    public void mostrarContactos() {
+        lista.mostrarContactos();
     }
+
 
     public void guardarEnFichero() {
         Scanner scanner = new Scanner(System.in);
@@ -144,18 +153,18 @@ public class Agenda {
         }
     }
 
-    public Contacto buscarContacto(){
-        String telefono = pedirTelefono();
-        for (Contacto contacto : contactos){
-            if (contacto.getTelefono().equals(telefono)){
+    public Contacto buscarContacto() {
+        String telefono = this.pedirTelefono();
+        for (Contacto contacto : lista.getContactos()) {
+            if (contacto.getTelefono().equals(telefono)) {
                 return contacto;
             }
         }
         return null;
     }
 
-    public String pedirTelefono(){
-        System.out.println("Introduce el telefono del contacto:");
+    public String pedirTelefono() {
+        System.out.println("Introduce el teléfono del contacto:");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
     }

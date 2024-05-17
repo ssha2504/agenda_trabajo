@@ -24,7 +24,6 @@ public class Menu {
                 6. Generar listar en pantalla
                 7. Generar listado en fichero
                 8. Salir
-               
                 """);
     }
 
@@ -41,20 +40,20 @@ public class Menu {
     //segun realiza funciones segun los opciones introducido
     public void opcionMenu() {
         do  {
+            agenda.anaContacto();
             mostrarMenu();
-            opcion = elegirOpcion();
-            int numeroEntero = elegirOpcion();
-            switch (numeroEntero) {
+            int opcion = elegirOpcion();
+            switch (opcion) {
                 case 0:
 
                     break;
 
                 case 1:
-                    agenda.NuevoContacto();
+                    agenda.nuevoContacto();
                     break;
 
                 case 2:
-                    agenda.ModificarContacto();
+                    agenda.modificarContacto();
                     break;
 
                 case 3:
