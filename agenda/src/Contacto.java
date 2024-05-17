@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class Contacto extends Persona{
     //datos
     private String telefono;
@@ -5,53 +7,39 @@ public class Contacto extends Persona{
     private String email;
 
     //el funcion de clase de contacto
-    public Contacto(String nombre, String apellidos, String telefono, String email, int direcPos) {
-        super(nombre, apellidos);
+    public Contacto(String nombre, String apellidos, String telefono, String email, int direcPos, LocalDate fechanc) {
+        super(nombre, apellidos,fechanc);
         this.telefono = telefono;
         this.email = email;
         this.direcPos = direcPos;
     }
 
-//los getter y setter
-    @Override
-    public String getApellido() {
-        return super.getApellido();
-    }
-
-    @Override
-    public String getNombre() {
-        return super.getNombre();
-    }
-
-    public int getdirecPos() {
-        return direcPos;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
+    //los getter y setter
     public String getTelefono() {
         return telefono;
     }
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public int getdirecPos() {
+        return direcPos;
+    }
+    public void setdirecPos(int direcPos) {
+        this.direcPos = direcPos;
+    }
+
 
 
     @Override
     public String toString() {
-        return super.getNombre() + super.getApellido() + "{" +
-                "telefono='" + telefono + '\'' +
-                ", direccionPos='" + direcPos + '\'' +
-                ", email='" + email + '\'' +
+        return super.toString() + telefono + ',' + direcPos + ',' + email +
                 '}';
-    }
-
-    //constructor que acepta nombre, apellidos y teléfono
-    public Contacto(String nombre, String apellidos ,String telefono , String direccion, int direccionPos, String email) {
-        super(nombre, apellidos);
-        this.telefono = telefono;
-        this.direcPos = direccionPos;
-        this.email = email;
-
     }
 
 }

@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 /**
  * @author: Shang y Ángel
  *
@@ -7,7 +5,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Menu menu = new Menu();
+        Agenda agenda = new Agenda();
+        Menu menu = new Menu(agenda);
         //llamo a opciones de menu
         menu.opcionMenu();
     }

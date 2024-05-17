@@ -1,13 +1,13 @@
-import java.util.List;
 import java.util.Scanner;
 import java.lang.System;
 
 public class Menu {
-
+    private Agenda agenda;
     //datos
     private int opcion;
     //el menu inicialmente va en -1 donde no da nada de error
-    public Menu() {
+    public Menu(Agenda agenda ) {
+        this.agenda = agenda;
         this.opcion = -1;
     }
 
@@ -32,7 +32,7 @@ public class Menu {
     public int elegirOpcion() {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Introduce una opción XD:");
+        System.out.println("Introduce una opción :");
         this.opcion = sc.nextInt();
         return this.opcion;
 
@@ -40,10 +40,9 @@ public class Menu {
 
     //segun realiza funciones segun los opciones introducido
     public void opcionMenu() {
-        while (this.opcion != 8) {
-            Scanner sc = new Scanner(System.in);
+        do  {
             mostrarMenu();
-
+            opcion = elegirOpcion();
             int numeroEntero = elegirOpcion();
             switch (numeroEntero) {
                 case 0:
@@ -51,54 +50,44 @@ public class Menu {
                     break;
 
                 case 1:
-                    Agenda.NuevoContacto();
+                    agenda.NuevoContacto();
                     break;
 
                 case 2:
-                	
-                	System.out.println("Introduce el numero de telefono para la busqueda: ");
-                    String numeroBuscado = sc.nextLine();
-                    
-                    List<Contacto> contactosEncontrados = Lista.buscarContacto(numeroBuscado);
-
+                    agenda.ModificarContacto();
                     break;
 
-
                 case 3:
-
+                    agenda.consultarContacto();
                     break;
 
                 case 4:
-
+                    agenda.eliminarContacto();
                     break;
-
 
                 case 5:
-
+                    int cont = agenda.obtenerNumeroContacto();
+                    System.out.println("tiene " + cont + " contactos");
                     break;
-
 
                 case 6:
-                    Lista.mostrarContactos();
+                    agenda.mostrarContactos();
                     break;
-
 
                 case 7:
-
+                    agenda.guardarEnFichero();
                     break;
-
-
                 case 8:
                     System.out.println("Saliendo... bye");
                     break;
 
                 default:
                     System.out.println("Opción no válida. Selecciona otra.");
-
-
             }
-        }
+        }while (opcion != 8);
     }
 }
+
+
 
 
