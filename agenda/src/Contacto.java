@@ -15,29 +15,43 @@ public class Contacto extends Persona{
     }
 
     //los getter y setter
-    public String getTelefono() {
+    public String getTelefono(){
         return telefono;
     }
-    public void setTelefono(String telefono) {
+    
+   
+    public void setTelefono(String telefono){
+    	
         this.telefono = telefono;
     }
-    public String getEmail() {
+    
+    
+    public String getEmail(){
+    	
         return email;
     }
-    public void setEmail(String email) {
+    
+    
+    public void setEmail(String email){
+    	
         this.email = email;
     }
-    public int getdirecPos() {
+    
+    
+    public int getdirecPos(){
+    	
         return direcPos;
     }
-    public void setdirecPos(int direcPos) {
+    
+    
+    public void setdirecPos(int direcPos){
+    	
         this.direcPos = direcPos;
     }
 
 
-
     @Override
-    public String toString() {
+    public String toString(){
         return super.toString() + telefono + ',' + direcPos + ',' + email +
                 '}';
     }
