@@ -40,7 +40,7 @@ public class Menu {
     //segun realiza funciones segun los opciones introducido
     public void opcionMenu() {
         do  {
-            agenda.anaContacto();
+       
             mostrarMenu();
             int opcion = elegirOpcion();
             switch (opcion) {
