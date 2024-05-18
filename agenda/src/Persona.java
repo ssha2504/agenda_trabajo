@@ -14,18 +14,50 @@ public class Persona {
     }
 
     //los getter
-    public String getNombre() { return nombre; }
-    public void setNombre(String nombre) { this.nombre = nombre; }
-    public String getApellido() { return apellido; }
-    public void setApellido(String apellido) { this.apellido = apellido; }
-    public LocalDate getfNacimiento() { return fNacimiento; }
-    public void setfNacimiento(LocalDate fechaNacimiento) { this.fNacimiento = fNacimiento; }
+    public String getNombre(){ 
+    	
+    	return nombre; 
+    	
+    }
+   
+    
+    public void setNombre(String nombre){ 
+    	
+    	this.nombre = nombre; 
+    	
+    }
+    
+    public String getApellido(){
+    	
+    	return apellido; 
+    	
+    }
+    
+    public void setApellido(String apellido){ 
+    	
+    	this.apellido = apellido; 
+    	
+    }
+    
+    public LocalDate getfNacimiento(){
+    	
+    	return fNacimiento; 
+    	
+    }
+    
+    public void setfNacimiento(LocalDate fechaNacimiento){ 
+    	
+    	this.fNacimiento = fNacimiento; 
+    	
+    }
 
 
     //tostring para mostrar no hace falta es para probar
     @Override
     public String toString() {
+    	
         return  nombre + ' ' + apellido + '{'  + "Fecha de nacimentor" +fNacimiento;
+    
     }
 
 
