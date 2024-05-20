@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.lang.System;
+import java.time.LocalDate;
 
 public class Menu {
     private Agenda agenda;
@@ -40,7 +41,7 @@ public class Menu {
     //segun realiza funciones segun los opciones introducido
     public void opcionMenu() {
         do  {
-       
+            CrearContactos();
             mostrarMenu();
             int opcion = elegirOpcion();
             switch (opcion) {
@@ -79,11 +80,13 @@ public class Menu {
                 case 8:
                     System.out.println("Saliendo... bye");
                     break;
-
                 default:
                     System.out.println("Opción no válida. Selecciona otra.");
             }
         }while (opcion != 8);
+    }
+    public void CrearContactos() {
+
     }
 }
 

@@ -3,71 +3,51 @@ import java.util.List;
 import java.util.Scanner;
 import java.io.IOException;
 import java.io.FileWriter;
-import java.time.format.DateTimeFormatter;
-
-
 
 public class Agenda {
     private Lista lista;
     private List<Contacto> contactos;
     private Cifrado cifrado;
-    
-    
 
     public Agenda() {
-    	
         this.lista = new Lista();
         this.cifrado = new Cifrado(""); // Inicialización con clave vacía por defecto
     }
 
-   
     public void nuevoContacto() {
-
         try {
-        	
             Scanner scanner = new Scanner(System.in);
-            
-        
             System.out.println("Ingrese el nombre del nuevo contacto:");
             String nombre = scanner.nextLine();
-            
-            System.out.println("Ingrese los apellidos:");
-            String apellidos = scanner.nextLine();
-            
-            System.out.println("Ingrese el teléfono:");
-            String telefono = scanner.nextLine();
-            
-            System.out.println("Ingrese el correo electrónico:");
-            String email = scanner.nextLine();
-            
-            System.out.println("Ingrese la dirección postal:");
-            int direcPos = scanner.nextInt();
-            
-            System.out.println("Ingrese la fecha de nacimiento (yyyy-MM-dd):");
-            
-            scanner.nextLine();//limpiar el bafer
-            
-            LocalDate fechanc= LocalDate.parse(scanner.nextLine());
-
-            Contacto contactos = new Contacto(nombre, apellidos, telefono, email, direcPos, fechanc);
-            
-            lista.agregar(contactos);
-            
+            if (nombre.equals("shan")) {
+                Contacto contactos = new Contacto("Shangfeng", "Shan","123456789", "shangfeng12345@ejemplo.com", 29210, LocalDate.of(2003, 4, 25));
+                lista.agregar(contactos);
+            }else {
+                System.out.println("Ingrese los apellidos:");
+                String apellidos = scanner.nextLine();
+                System.out.println("Ingrese el teléfono:");
+                String telefono = scanner.nextLine();
+                System.out.println("Ingrese el correo electrónico:");
+                String email = scanner.nextLine();
+                System.out.println("Ingrese la dirección postal:");
+                int direcPos = scanner.nextInt();
+                System.out.println("Ingrese la fecha de nacimiento (yyyy-MM-dd):");
+                scanner.nextLine();//limpiar el bafer
+                LocalDate fechanc= LocalDate.parse(scanner.nextLine());
+                Contacto contactos = new Contacto(nombre, apellidos, telefono, email, direcPos, fechanc);
+                lista.agregar(contactos);
+            }
             System.out.println("¡Contacto agregado correctamente!");
             
         }
         catch (Exception e){
-        	
         	System.out.println(e.getMessage());
         }
 
     }
 
-
     public void modificarContacto() {
-    	
         Scanner scanner = new Scanner(System.in);
-        
         Contacto contacto = this.buscarContacto();
         if (contacto == null) {
             System.out.println("Contacto no encontrado.");
@@ -83,9 +63,7 @@ public class Agenda {
         System.out.println("Introduce el número del campo que quiere modificar:");
         int cambio = scanner.nextInt();
         scanner.nextLine(); // Consumir la línea restante
-
         switch (cambio) {
-            
         	case 1:
                 System.out.println("Ingrese el nuevo nombre:");
                 String nombre = scanner.nextLine();
@@ -124,14 +102,11 @@ public class Agenda {
 
 
     public void consultarContacto() {
-    	
         Contacto contacto = buscarContacto();
-        
 	        if (contacto != null) {
 	            System.out.println("Contacto encontrado: " + contacto);
 	        } 
 	        else {
-	        	
 	            System.out.println("Contacto no encontrado.");
 	        }
     }
@@ -139,11 +114,8 @@ public class Agenda {
     public void eliminarContacto() {
         boolean eliminado = false;
         pedirTelefono();
-       
 	        for (Contacto contacto : contactos){
-	        	
 	            if (contacto.getTelefono().equals(pedirTelefono())){
-	            	
 	                contactos.remove(contacto);
 	                System.out.println("contacto eliminado correctamente.");
 	                eliminado = true;
@@ -151,64 +123,47 @@ public class Agenda {
 	            }
 	        }
 	        if (!eliminado){
-	           
 	        	System.out.println("Contacto no encontrado.");
 	        }
     }
 
     public int obtenerNumeroContacto() {
-    	
         return lista.obtenerNumeroContacto();
-        
     }
 
     public void mostrarContactos() {
-    	
         lista.mostrarContactos();
-        
     }
 
 
     public void guardarEnFichero() {
-    	
         Scanner scanner = new Scanner(System.in);
-        
         System.out.println("Ingrese el nombre del fichero destino (sin extensión):");
         String nombreFichero = scanner.nextLine() + ".txt";
 
 	        try (FileWriter writer = new FileWriter(nombreFichero)) {
 	            for (Contacto contacto : contactos) {
 	                writer.write(contacto.toString() + "\n");
-	                
 	            }
-	            
 	            System.out.println("Listado generado en el fichero " + nombreFichero);
-	            
 	        } catch (IOException e) {
 	            System.out.println("Error al escribir en el fichero: " + e.getMessage());
-	            
 	        }
     }
 
     public Contacto buscarContacto() {
-    	
         String telefono = this.pedirTelefono();
-        
 	        for (Contacto contacto : lista.getContactos()) {
 	            if (contacto.getTelefono().equals(telefono)) {
 	                return contacto;
 	            }
 	        }
-	        
 	        return null;
     }
-    
 
     public String pedirTelefono() {
-    	
         System.out.println("Introduce el teléfono del contacto:");
         Scanner scanner = new Scanner(System.in);
-        
         	return scanner.nextLine();
     }
 }
