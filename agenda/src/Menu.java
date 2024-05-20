@@ -2,17 +2,33 @@ import java.util.Scanner;
 import java.lang.System;
 import java.time.LocalDate;
 
+
+/**
+ * Clase Menu gestiona la interacción del usuario con la aplicación.
+ * Permite seleccionar entre diferentes opciones de menú relacionados con la gestión de contactos.
+ */
+
 public class Menu {
     private Agenda agenda;
-    //datos
     private int opcion;
-    //el menu inicialmente va en -1 donde no da nada de error
+   
+    
+    /**
+     * Constructor de la clase Menu
+     * Inicializamos la referencia a la instancia de agenda y establece la opcion inicial a -1.
+     * @param agenda La instancia de Agenda a utilizar.
+     */
+   
     public Menu(Agenda agenda ) {
         this.agenda = agenda;
         this.opcion = -1;
     }
 
-    //los textos de obciones de menu
+    
+    /**
+     * Muestra las opciones disponibles del menú.
+     */
+    
     public void mostrarMenu() {
         System.out.println("""
                 = OPCIONES =
@@ -28,7 +44,12 @@ public class Menu {
                 """);
     }
 
-    //pide el obciones
+   
+    /**
+     * Solicita al usuario que selecciona una opción del menú.
+     * @return La opción seleccionada por el usuario.
+     */
+    
     public int elegirOpcion() {
         Scanner sc = new Scanner(System.in);
 
@@ -38,7 +59,9 @@ public class Menu {
 
     }
 
-    //segun realiza funciones segun los opciones introducido
+    /**
+     * Ejecuta la acción correspondiente según la opción seleccionada por el usuario.
+     */
     public void opcionMenu() {
         do  {
             CrearContactos();
@@ -83,8 +106,11 @@ public class Menu {
                 default:
                     System.out.println("Opción no válida. Selecciona otra.");
             }
+            
         }while (opcion != 8);
     }
+    
+    
     public void CrearContactos() {
 
     }
