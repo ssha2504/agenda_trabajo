@@ -22,6 +22,8 @@ public class Agenda {
             if (nombre.equals("shan")) {
                 Contacto contactos = new Contacto("Shangfeng", "Shan","123456789", "shangfeng12345@ejemplo.com", 29210, LocalDate.of(2003, 4, 25));
                 lista.agregar(contactos);
+            }else if(nombre.equals("angel")) {
+                Contacto contactos = new Contacto("Shangfeng", "Shan","123456789", "shangfeng12345@ejemplo.com", 29210, LocalDate.of(2003, 4, 25));
             }else {
                 System.out.println("Ingrese los apellidos:");
                 String apellidos = scanner.nextLine();
