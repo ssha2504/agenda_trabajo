@@ -50,8 +50,8 @@ public class Agenda {
             }
             else if(nombre.equals("angel")) {
             	
-                Contacto contactos = new Contacto("Ángel", "Pérez","123", "angelperez12345@ejemplo.com", 29650, LocalDate.of(2000, 8, 12));
-                
+                Contacto contactos = new Contacto("angel", "Perez","123", "angelperez12345@ejemplo.com", 29650, LocalDate.of(2000, 8, 12));
+                lista.agregar(contactos);
             }
             else {
             	

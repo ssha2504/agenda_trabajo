@@ -4,8 +4,9 @@ import java.time.LocalDate;
  * Main es la clase principal donde se crearan un objeto Agenda y
  * un objeto Menu.
  * 
- * @author: Shang y Ángel
- * @version:20/05/2024
+ * @author Shang y Angel
+ * @version 1.0
+ * @since 20/05/2024
  */
 
 public class Main {
