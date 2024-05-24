@@ -1,5 +1,4 @@
 import java.time.LocalDate;
-import java.util.List;
 import java.util.Scanner;
 import java.io.IOException;
 import java.io.FileWriter;
@@ -13,7 +12,6 @@ import java.io.FileWriter;
 
 public class Agenda {
     private Lista lista; // Lista de contactos
-    private List<Contacto> contactos; // Lista de contactos para operaciones específicas
     private Cifrado cifrado; // Obejto para operaciones de cifrado
 
     
@@ -23,7 +21,6 @@ public class Agenda {
     */
     
     public Agenda() {
-    	
         this.lista = new Lista();
         this.cifrado = new Cifrado(""); // Inicialización con clave vacía por defecto
     }
@@ -174,10 +171,10 @@ public class Agenda {
     
     public void eliminarContacto() {
         boolean eliminado = false;
-        pedirTelefono();
-	        for (Contacto contacto : contactos){
-	            if (contacto.getTelefono().equals(pedirTelefono())){
-	                contactos.remove(contacto);
+        String telefono = pedirTelefono();
+	        for (Contacto contacto : lista.getContactos()){
+	            if (contacto.getTelefono().equals(telefono)){
+	                lista.getContactos().remove(contacto);
 	                System.out.println("contacto eliminado correctamente.");
 	                eliminado = true;
 	                break;
@@ -218,7 +215,7 @@ public class Agenda {
         String nombreFichero = scanner.nextLine() + ".txt";
 
 	        try (FileWriter writer = new FileWriter(nombreFichero)) {
-	            for (Contacto contacto : contactos) {
+	            for (Contacto contacto : lista.getContactos()) {
 	                writer.write(contacto.toString() + "\n");
 	            }
 	            

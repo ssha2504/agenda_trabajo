@@ -31,16 +31,6 @@ public class Lista {
     }
     
     /**
-     * Elimina un objeto Contacto de la lista de contactos.
-     * @param contacto El objeto Contacto que elimina
-     */
-    public void eliminar(Contacto contacto){
-    	
-        contactos.remove(contacto);
-        
-    }
-    
-    /**
      * Devuelve la lista completa de contactos.
      * @return La lista de contactos.
      */
@@ -48,31 +38,6 @@ public class Lista {
     	
         return contactos;
     }
-    
-    
-    /**
-     * Busca un contacto en la lista
-     * 
-     * @param criterio El criterio de búsqueda.
-     * @return El primer contacto que coinicida con el criterio o null si no encuentra ninguno.
-     */
-    
-    public Contacto buscar(String criterio) {
-    	for (Contacto contacto : contactos) {
-            
-        	if (contacto.getNombre().equalsIgnoreCase(criterio)   ||
-                contacto.getApellido().equalsIgnoreCase(criterio) ||
-                contacto.getTelefono().equalsIgnoreCase(criterio) ||
-                contacto.getEmail().equalsIgnoreCase(criterio)) {
-            	
-            	return contacto;
-            }
-        
-    	}
-    	
-        return null;
-    }
-    
     
     /**
      * Obtiene el número total de contactos en la lista.

@@ -100,7 +100,7 @@ public class Persona {
     @Override
     public String toString() {
     	
-        return  nombre + ' ' + apellido + '{'  + "Fecha de nacimentor" +fNacimiento;
+        return  nombre + ' ' + apellido + '{'  + "Fecha de nacimentor" +fNacimiento + ", ";
     
     }
 
