@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Lista {
 
 	private Nodo cabeza;
-	 private int tamano;
+	 private int taman;
 
 	
 	 
