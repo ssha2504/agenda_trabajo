@@ -13,7 +13,7 @@ public class Cifrado {
 
     /**
      * Constructor de la Clase Cifrado.
-     * @param clave
+     * @param clave Se utilizara para cifrar.
      */
     
     public Cifrado(String clave) {
