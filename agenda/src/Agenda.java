@@ -12,7 +12,7 @@ import java.io.FileWriter;
 
 public class Agenda {
     private Lista lista; // Lista de contactos
-    private Cifrado cifrado; // Obejto para operaciones de cifrado
+    private Cifrado cifrado; // Objeto para operaciones de cifrado
 
     
    /**
