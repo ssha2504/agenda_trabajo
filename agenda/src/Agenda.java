@@ -199,6 +199,7 @@ public class Agenda {
      * Método para mostrar todos los contactos en la agenda
      */
     public void mostrarContactos() {
+    	
         lista.mostrarContactos();
     }
 
