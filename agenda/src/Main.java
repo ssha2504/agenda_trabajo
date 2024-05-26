@@ -10,6 +10,13 @@ import java.time.LocalDate;
  */
 
 public class Main {
+	
+	/**
+     * Inicializa una instancia de {@link Agenda}, crea un menú y llama al método {@link Menu#opcionMenu()}
+     * para presentar al usuario las opciones disponibles.
+     * @param args Argumentos
+     */
+	
     public static void main(String[] args) {
     	
     	/**

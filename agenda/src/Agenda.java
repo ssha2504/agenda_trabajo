@@ -5,7 +5,7 @@ import java.io.FileWriter;
 
 /**
  * Clase Agenda gestiona una lista de contactos.
- * Permite agregar, modificar, consultar, eliminar y guardar contactos.
+ * Permite agregar, modificar, consultar y guardar contactos.
  * Utiliza una instacia de {@link Lista} para almacenar los contactos,
  * y una instancia de {@link Cifrado} para realizar el cifrado.
  */
@@ -17,7 +17,7 @@ public class Agenda {
     
    /**
     * Constructor de la Clase Agenda
-    * Inicializamos la lista de contactos y el objeto de cifrado
+    * Inicializamos la lista  y el objeto de cifrado.
     */
     
     public Agenda() {
@@ -28,7 +28,7 @@ public class Agenda {
     
     /**
      * Método para agregar un nuevo contacto a la agenda.
-     * Solicita información al usuario y crea un nuevo objeto Contacto
+     * Solicita información al usuario y crea un nuevo objeto Contacto.
      */
     
     public void nuevoContacto() {

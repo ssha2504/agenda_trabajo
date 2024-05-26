@@ -110,6 +110,10 @@ public class Menu {
         }while (opcion != 8);
     }
     
+    /**
+     * Metodo Crea un nuevo Contacto 
+     * por el usuario.
+     */
     
     public void CrearContactos() {
 
