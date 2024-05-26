@@ -50,7 +50,7 @@ class PersonaTest {
     
     @Test
     public void testToString() {
-        String comprobacion = "Juan Pérez{Fecha de nacimentor" + LocalDate.of(1990, 5, 20);
+        String comprobacion = "Juan Pérez{Fecha de nacimientor" + LocalDate.of(1990, 5, 20);
         assertEquals(comprobacion, persona.toString());
     }
      
